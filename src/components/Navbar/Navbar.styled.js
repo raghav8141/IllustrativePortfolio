@@ -13,11 +13,13 @@ export const Nav = styled.nav`
 
 export const Logo = styled.div`
   display: flex;
+  font-family: 'Didact Gothic;
   align-items: center;
   color:  #000000;
+  text-decoration: bold;
   font-size: 40px;
-  position: left;
-  top: 0;
+  position: absolute;
+  top: 0%;
   left: 0;
   padding: 10px;
 `;
@@ -46,17 +48,14 @@ export const Name = styled.div`
 `;
 
 export const Bars = styled(FaBars)`
-  display: none;
+  display: flex;
+  position: absolute;
+  top: 4.4%;
+  right: 0;
+  transform: translate(-100%, -50%);
   color: #808080;
-  @media screen and (max-width: 768px) {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 75%);
-    font-size: 1.8rem;
-    cursor: pointer;
-  }
+  font-size: 1.8rem;
+  cursor: pointer;
 `;
 
 export const NavMenu = styled.div`
@@ -66,6 +65,68 @@ export const NavMenu = styled.div`
   @media screen and (max-width: 768px) {
     display: none;
   }
+`;
+
+// export const Drawer = styled.div`
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100vw;
+//   height: 100vh;
+//   background: rgba(0, 0, 0, 0.8);
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   transition: opacity 0.3s ease-in-out;
+//   z-index: 999;
+//   opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
+//   visibility: ${({ isOpen }) => (isOpen ? 'visible' : 'hidden')};
+// `;
+
+export const DrawerContainer = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  background: #f2f2f2;
+  z-index: 999;
+  opacity: .90;
+  transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
+  transition: transform 0.3s ease-in-out;
+`;
+
+export const DrawerContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  margin-top: 2rem;
+//   padding-top: 2rem;
+//   padding: 0; 
+//   margin: 0; 
+`;
+
+export const DrawerItem = styled(NavLink)`
+  color: #000000;
+  text-decoration: none;
+  font-family: Didact Gothic;
+  font-size: 18px
+//   padding: 0.5rem;
+//    &:not(:last-child) {
+//     margin-bottom: 0.5rem;
+//   }
+`;
+export const DrawerItemContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+`;
+
+export const DrawerNavLink = styled(NavLink)`
+  margin-bottom: 1rem;
 `;
 
 export const NavBtn = styled.nav`

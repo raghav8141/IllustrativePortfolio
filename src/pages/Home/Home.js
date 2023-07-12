@@ -5,7 +5,7 @@ import Contact from '../Contact/Contact'
 
 
 import { HomeContainer, BackgroundImg, Name } from './Home.styled';
-let HomeImage = require("../../images/home-page-background.png");
+let HomeImage = require("../../images/DSC_0927.JPG");
 
 function Home(){
     return (

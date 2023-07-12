@@ -4,48 +4,67 @@ import { Nav,
   NavMenu,
   Logo,
   NavDropdown,
-  NavDropdownContents
+  NavDropdownContents,
+  Drawer,
+  DrawerContent,
+  Bars,
+  DrawerContainer,
+  DrawerNavLink,
+  DrawerItem,
+  DrawerItemContainer
 } from './Navbar.styled';
+// import { NavLink as Link } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from 'react';
+import { NavLink as Link } from 'react-router-dom';
 
-function Navbar() {
+const Navbar = () => {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const drawerRef = useRef(null);
+
+  const toggleDrawer = () => {
+    setIsDrawerOpen(!isDrawerOpen);
+  };
+
+  const handleClickOutsideDrawer = (event) => {
+    if (drawerRef.current && !drawerRef.current.contains(event.target)) {
+      setIsDrawerOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutsideDrawer);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutsideDrawer);
+    };
+  }, []);
+
   return (
     <>
       <Nav>
-        <Logo>
-            Raghav Parikh
-        </Logo>
-        <NavMenu>
-          <NavLink to='/' >
-            Home
-          </NavLink>
-			 <NavLink to='/gallery' activeClassName="active">
-            Image
-          </NavLink>
-          <NavLink to='/contact' activeClassName="active">
-            Contact
-          </NavLink>
-          </NavMenu>        
+			<NavLink to="/">
+				<Logo>
+          		Raghav Parikh
+				</Logo>
+			</NavLink>
+        {/* <NavMenu>
+          <NavLink to='/'>Home</NavLink>
+          <NavLink to='/gallery' activeClassName="active">Image</NavLink>
+          <NavLink to='/contact' activeClassName="active">Contact</NavLink>
+        </NavMenu> */}
+        <Bars onClick={toggleDrawer} />
       </Nav>
-      </>
+      <DrawerContainer open={isDrawerOpen} ref={drawerRef}>
+        <DrawerContent>
+         <DrawerItemContainer>
+				<DrawerItem to="/">Home</DrawerItem>
+				<DrawerItem to="/gallery/image">Slider</DrawerItem>
+				<DrawerItem to="/layout">Gallery</DrawerItem>
+				<DrawerItem to="/contact">Contact</DrawerItem>
+			</DrawerItemContainer>
+        </DrawerContent>
+      </DrawerContainer>
+    </>
   );
 }
-
-// const Navbar = () => {
-//   return (
-//     <Nav>
-// 		{/* <NavItem>Raghav Parikh</NavItem> */}
-//       <NavItem to="/" exact activeClassName="active">
-//         Home
-//       </NavItem>
-//       <NavItem to="/about" activeClassName="active">
-//         About
-//       </NavItem>
-// 		<NavItem to="/contact" activeClassName="active">
-//         Contact Us
-//       </NavItem>
-//       {/* Add more nav items for your routes */}
-//     </Nav>
-//   );
-// };
 
 export default Navbar;
