@@ -2,24 +2,39 @@ import { FaBars } from 'react-icons/fa';
 import { NavLink as Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+export const NavBarContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+`;
+
 export const Nav = styled.nav`
-  background: #FFFFFF;
+  background: #fffff;
   height: 70px;
   display: flex;    
   justify-content: space-between;
   padding: 0.2rem calc((100vw - 1000px) / 2);
-  z-index: 12;
+//   z-index: 12;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
 `;
 
 export const Logo = styled.div`
   display: flex;
-  font-family: 'Didact Gothic;
+  font-family: 'Didact Gothic', sans-serif;
   align-items: center;
   color:  #000000;
-  text-decoration: bold;
+  text-decoration: none;
   font-size: 40px;
+  font-weight: 100;
   position: absolute;
-  top: 0%;
+  top: 0.5%;
   left: 0;
   padding: 10px;
 `;
@@ -50,10 +65,10 @@ export const Name = styled.div`
 export const Bars = styled(FaBars)`
   display: flex;
   position: absolute;
-  top: 4.4%;
+  top: 45%;
   right: 0;
   transform: translate(-100%, -50%);
-  color: #808080;
+  color:  #000000;
   font-size: 1.8rem;
   cursor: pointer;
 `;
@@ -67,22 +82,6 @@ export const NavMenu = styled.div`
   }
 `;
 
-// export const Drawer = styled.div`
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100vw;
-//   height: 100vh;
-//   background: rgba(0, 0, 0, 0.8);
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   transition: opacity 0.3s ease-in-out;
-//   z-index: 999;
-//   opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
-//   visibility: ${({ isOpen }) => (isOpen ? 'visible' : 'hidden')};
-// `;
-
 export const DrawerContainer = styled.div`
   position: fixed;
   top: 0;
@@ -91,7 +90,7 @@ export const DrawerContainer = styled.div`
   width: 250px;
   background: #f2f2f2;
   z-index: 999;
-  opacity: .90;
+  opacity: .80;
   transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
   transition: transform 0.3s ease-in-out;
 `;
@@ -111,12 +110,13 @@ export const DrawerContent = styled.div`
 export const DrawerItem = styled(NavLink)`
   color: #000000;
   text-decoration: none;
-  font-family: Didact Gothic;
-  font-size: 18px
-//   padding: 0.5rem;
-//    &:not(:last-child) {
-//     margin-bottom: 0.5rem;
-//   }
+  font-family: 'Didact Gothic', sans-serif;
+  font-weight: 100;
+  font-size: 18px;
+
+  &.home-drawer-item {
+    margin-top: 3rem; /* Adjust the value as needed */
+  } 
 `;
 export const DrawerItemContainer = styled.div`
   display: flex;

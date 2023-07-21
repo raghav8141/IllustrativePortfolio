@@ -1,11 +1,6 @@
-import { Nav,
-	NavItem,
+import { Nav, NavBarContainer,
   NavLink,
-  NavMenu,
   Logo,
-  NavDropdown,
-  NavDropdownContents,
-  Drawer,
   DrawerContent,
   Bars,
   DrawerContainer,
@@ -15,7 +10,6 @@ import { Nav,
 } from './Navbar.styled';
 // import { NavLink as Link } from 'react-router-dom';
 import React, { useState, useEffect, useRef } from 'react';
-import { NavLink as Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -31,6 +25,10 @@ const Navbar = () => {
     }
   };
 
+  const handleDrawerItemClick = () => {
+  		setIsDrawerOpen(false);
+	};
+
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutsideDrawer);
     return () => {
@@ -40,29 +38,26 @@ const Navbar = () => {
 
   return (
     <>
-      <Nav>
+	 <NavBarContainer>
+		<Nav>
 			<NavLink to="/">
 				<Logo>
           		Raghav Parikh
 				</Logo>
 			</NavLink>
-        {/* <NavMenu>
-          <NavLink to='/'>Home</NavLink>
-          <NavLink to='/gallery' activeClassName="active">Image</NavLink>
-          <NavLink to='/contact' activeClassName="active">Contact</NavLink>
-        </NavMenu> */}
         <Bars onClick={toggleDrawer} />
       </Nav>
       <DrawerContainer open={isDrawerOpen} ref={drawerRef}>
         <DrawerContent>
          <DrawerItemContainer>
-				<DrawerItem to="/">Home</DrawerItem>
-				<DrawerItem to="/gallery/image">Slider</DrawerItem>
-				<DrawerItem to="/layout">Gallery</DrawerItem>
-				<DrawerItem to="/contact">Contact</DrawerItem>
+				<DrawerItem to="/" onClick={handleDrawerItemClick} className="home-drawer-item">Home</DrawerItem>
+				<DrawerItem to="/gallery/image" onClick={handleDrawerItemClick}>Slider</DrawerItem>
+				<DrawerItem to="/layout" onClick={handleDrawerItemClick}>Gallery</DrawerItem>
+				<DrawerItem to="/contact" onClick={handleDrawerItemClick}>Contact</DrawerItem>
 			</DrawerItemContainer>
         </DrawerContent>
       </DrawerContainer>
+	 </NavBarContainer>
     </>
   );
 }

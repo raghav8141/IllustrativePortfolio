@@ -1,5 +1,5 @@
-// import React from 'react';
-// import { useParams } from 'react-router-dom';
+import '../data/custom-image-gallery.css';
+
 export const images = [
   {
 	 id: 1,
@@ -138,19 +138,4 @@ export const images = [
   },
 ];
 
-// export default function Image() {
-//   const { id } = useParams();
 
-//   // Find the image with the matching ID
-//   const image = images.find((img) => img.id === parseInt(id, 10));
-
-//   if (!image) {
-//     return <div>Image not found.</div>;
-//   }
-
-//   return (
-//     <div>
-//       <img src={image.original} alt={`Image ${image.id}`} />
-//     </div>
-//   );
-// }

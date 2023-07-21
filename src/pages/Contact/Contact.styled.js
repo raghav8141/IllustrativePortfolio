@@ -1,29 +1,77 @@
 import styled from 'styled-components';
+// import './reset.css';
 
 const StyledContactForm = styled.div`
   display: flex;
   justify-content: center; 
+  align-items: center;
   width: 100%;
   height: 100vh;
+  background: #ccc;
 
-//   .row {
-//     display: flex;
-//     flex-wrap: wrap;
-//     justify-content: center;
-//   }
+  .row {
+    display: flex;
+  }
 
-//   .column {
-//     flex: 1;
-//     margin-top: 6px;
-//     padding: 20px;
-//   }
+  .column {
+    flex-basis: 50%;
+   //  margin-top: -20px;
+    padding: 20px;
+    box-sizing: border-box;
+	 position: relative;
+	 top: -30px;
+    right:1%;
+  }
+
+  .column.logo-section {
+	//  position: absolute;
+	//  top: 50%;
+   //  left: 67.7%;
+   //  transform: translate(-50%, -50%); 
+	
+	 top: 5%;
+	 left: -3%;
+	 display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .column-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+  .logo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+ .form-box {
+    border: 1px solid black;
+    padding: 10px;
+	//  width: 100%;
+    width: 600px;
+	 height: 550px;
+	 display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+	 background: #f0f0f0;
+	//  e0e0e0
+  }
 
   form {
     display: flex;
-   //  align-items: flex-start;
     flex-direction: column;
 	 position: relative;
-    width: 700px;
+    width: 500px;
     font-size: 16px;
 
 	 h2 {
@@ -66,11 +114,8 @@ const StyledContactForm = styled.div`
 	 }
 
     input[type="submit"] {
-		position: absolute;
-		bottom: -3rem; /* Add this line */
-		left: 52%; /* Add this line */
-		transform: translateX(-50%); /* Add this line */
       margin-top: 2rem;
+		margin-left: 10px;
       cursor: pointer;
       background: rgb(0, 0, 0);
       color: white;
@@ -78,132 +123,73 @@ const StyledContactForm = styled.div`
     }
 	}
 
-  .sidebar {
+	.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+   .sidebar {
     display: flex;
+	 flex-direction: column;
     align-items: center;
-	 justify-content: center;
+	 gap: 10px;
     
     a {
-      margin-top: 60px;
        text-decoration: none;
        color: #000;
 
 		 .image1 {
-        width: 50px; 
-        height: 40px; 
+        width: 49px; 
+        height: 49px; 
         margin-top: 2rem;
-		  display: block; 
+		//   display: block; 
 		  margin: 0 auto;
       }
 
 		.image2 {
-        width: 55px; 
-        height: 55px; 
+        width: 53px; 
+        height: 53px; 
         margin-top: 2rem;
-		  display: block; 
+		//   display: block; 
+		  margin: 0 auto;
+      }
+
+		.image3 {
+        width: 30px; 
+        height: 27px; 
+        margin-top: 2rem;
+		//   display: block; 
 		  margin: 0 auto;
       }
     }
   }
 
-//   a {
-//       margin-top: 10px;
-//        text-decoration: none;
-//        color: #000;
+  @media (max-width: 768px) {
+    form {
+      width: 90%;
+      font-size: 14px;
+    }
 
-// 		 .image1 {
-//         width: 45px; 
-//         height: 45px; 
-//         margin-top: 2rem;
-// 		  display: block; /* Ensures the image is displayed as a block element */
-// 		  margin: 0 auto;
-//       }
+  }
 
-// 		.image2 {
-//         width: 60px; 
-//         height: 60px; 
-//         margin-top: 2rem;
-// 		  display: block; /* Ensures the image is displayed as a block element */
-// 		  margin: 0 auto;
-//       }
-//     }
+  @media (max-width: 576px) {
+    form {
+      width: 100%;
+      font-size: 12px;
+
+      input[type="submit"] {
+        width: 100%;
+      }
+
+
+		.sidebar {
+			a {
+				margin-top: 3rem; 
+			}  
+      }
+
+    }
+  }
 `;
-
-// const StyledContactForm = styled.div`
-//   display: flex;
-//   justify-content: center; 
-//   width: 100%;
-//   height: 100vh;
-  
-//   .content-wrapper {
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: flex-start;
-//     width: 800px;
-//     font-size: 16px;
-//   }
-  
-//   form {
-//     display: flex;
-//     flex-direction: column;
-//     width: 400px;
-//     input {
-//       width: 100%;
-//       height: 35px;
-//       padding: 7px;
-//       outline: none;
-//       border-radius: 5px;
-//       border: 1px solid rgb(220, 220, 220);
-      
-//       &:focus {
-//         border: 2px solid rgba(0, 206, 158, 1);
-//       }
-//     }
-    
-//     label {
-//       margin-top: 10px;
-//     }
-    
-//     textarea {
-//       width: 100%;
-//       height: 100px;
-//       padding: 7px;
-//       outline: none;
-//       border-radius: 5px;
-//       border: 1px solid rgb(220, 220, 220);
-      
-//       &:focus {
-//         border: 2px solid rgba(0, 206, 158, 1);
-//       }
-//     }
-    
-//     input[type="submit"] {
-//       margin-top: 10px;
-//       padding: 10px 15px;
-//       background-color: #00ce9e;
-//       color: #fff;
-//       border: none;
-//       border-radius: 5px;
-//       cursor: pointer;
-//     }
-//   }
-  
-//   .sidebar {
-//     width: 350px;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-// 	 justify-content: center;
-// 	 margin-left: 50px;
-// 	 margin-top: auto;
-//   	 margin-bottom: auto; 
-    
-//     a {
-//       margin-top: 10px;
-//       text-decoration: none;
-//       color: #000;
-//     }
-//   }
-// `;
 
 export default StyledContactForm;

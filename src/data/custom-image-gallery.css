@@ -1,0 +1,87 @@
+.image-gallery-slide-wrapper {
+	position: fixed;
+	top: 9%;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+/* Center the main image horizontally and vertically */
+.image-gallery-slide {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* box-shadow: none; */
+}
+
+/* Make the main image take 90% of the screen width */
+.image-gallery-slide img {
+	max-width: 90%;
+	max-height: 90vh;
+	/* Limit the height to 90% of the viewport height */
+	object-fit: contain;
+	/* box-shadow: none; */
+	/* Change to 'cover' if you prefer */
+}
+
+/* Position the thumbnails at the bottom of the screen */
+.image-gallery-thumbnails-wrapper {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 16px;
+	background-color: rgba(211,211,211);
+	/* Adjust the background color as needed */
+}
+
+/* Add some space between the thumbnails */
+.image-gallery-thumbnails {
+	margin-top: 8px;
+}
+
+/* Adjust the size of the thumbnails */
+.image-gallery-thumbnail img {
+	width: 80px;
+	height: 60px;
+	object-fit: cover;
+}
+
+/* Increase the spacing between thumbnails */
+.image-gallery-thumbnail:not(:last-child) {
+	margin-right: 8px;
+}
+
+.image-gallery-fullscreen-button {
+	cursor: pointer;
+	position: absolute;
+	top: 500px;
+	right: 12px;
+	z-index: 2;
+}
+
+.image-gallery-fullscreen-button img {
+	width: 24px;
+	height: 24px;
+}
+
+.image-gallery-fullscreen-button:hover img {
+	opacity: 0.7;
+}
+
+.image-gallery-play-button {
+	cursor: pointer;
+	position: absolute;
+	top: 500px;
+	left: 12px;
+	z-index: 2;
+}
+
+.image-gallery-play-button img {
+	width: 24px;
+	height: 24px;
+}
+
+.image-gallery-play-button:hover img {
+	opacity: 0.7;
+}

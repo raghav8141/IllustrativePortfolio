@@ -2,8 +2,19 @@ import PhotoAlbum from "react-photo-album";
 import { useNavigate } from "react-router-dom";
 import React, { useState } from 'react';
 import { images } from '../../data/images';
+import styled from 'styled-components';
 import ImageGallery from 'react-image-gallery'; 
 
+const GalleryContainer = styled.div`
+  position: fixed;
+  top: 8%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; 
+`;
 
 const photos = [
     { id: 1, src: require('../../images/DSC_0899.JPG'), width: 1080, height: 1620 },
@@ -68,9 +79,9 @@ export default function Gallery() {
   };
 
  return (
-    <>
+    <GalleryContainer>
       <PhotoAlbum layout="rows" photos={photos} onClick={handlePhotoClick} />
       {renderClickedImage()}
-    </>
+    </GalleryContainer>
   );
 }
