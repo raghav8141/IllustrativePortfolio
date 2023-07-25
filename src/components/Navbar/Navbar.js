@@ -4,11 +4,9 @@ import { Nav, NavBarContainer,
   DrawerContent,
   Bars,
   DrawerContainer,
-  DrawerNavLink,
   DrawerItem,
   DrawerItemContainer
 } from './Navbar.styled';
-// import { NavLink as Link } from 'react-router-dom';
 import React, { useState, useEffect, useRef } from 'react';
 
 const Navbar = () => {

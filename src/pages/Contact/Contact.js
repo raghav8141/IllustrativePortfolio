@@ -3,6 +3,7 @@ import StyledContactForm from './Contact.styled';
 import InstagramLogo from '../../images/3621435.png';
 import LinkedinLogo from '../../images/linkedin-logo-linkedin-icon-transparent-free-png.webp'
 import GmailLogo from '../../images/Gmail_icon_(2020).svg.png';
+import './style.css';
 
 const Contact = () => {
   const form = useRef();
@@ -18,7 +19,6 @@ const Contact = () => {
     const emailInput = form.current.elements.Email;
 
     if (!validateEmail(emailInput.value)) {
-      // Email validation failed
       alert('Please enter a valid email address');
       return;
     }
@@ -66,3 +66,4 @@ const Contact = () => {
 };
 
 export default Contact;
+

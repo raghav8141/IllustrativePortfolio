@@ -1,11 +1,12 @@
 import ImageGallery from 'react-image-gallery';
-import styled from 'styled-components';
 import { images } from '../data/images';
 import Home from '../pages/Home/Home';
 import Navbar from './Navbar/Navbar';
 import Contact from '../pages/Contact/Contact';
 import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-dom';
 import Rowlayout from '../pages/Layout/Rowlayout';
+import GlobalStyles from '../styles/GlobalStyle';
+// import CustomImageGallery from '../data/CustomImageGallery';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
 				</Route>
           </Routes>
       </Router>
+		 <GlobalStyles />
     </div>
   );
 }
@@ -43,5 +45,6 @@ function MyGallery(props) {
 	}
 	return (
 		<ImageGallery items={images} startIndex={startIndex} />
+		// <CustomImageGallery startIndex={startIndex} />
 	)
 }

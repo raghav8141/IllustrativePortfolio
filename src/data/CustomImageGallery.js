@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
-import './custom-image-gallery.css'; // Import the custom CSS file
-
-import images from '../data/images.js'; // Adjust the import path based on your project structure
+import './custom-image-gallery.css'; // Imported custom CSS file
+import {images} from './images';     
+// import '../data/custom-image-gallery.css'; // Imported custom CSS file
+// import {images} from '../data/images';
 
 const CustomImageGallery = () => {
   const [showThumbnails, setShowThumbnails] = useState(true);
@@ -12,7 +13,7 @@ const CustomImageGallery = () => {
     setShowThumbnails((prevShowThumbnails) => !prevShowThumbnails);
   };
 
-  const handleScreenChange = (isFullscreen) => {
+  const handleFullScreen = (isFullscreen) => {
     setShowThumbnails(!isFullscreen); // Hide thumbnails when entering fullscreen, and show them when exiting
   };
 
