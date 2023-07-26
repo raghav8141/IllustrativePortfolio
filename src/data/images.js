@@ -3,8 +3,8 @@ import '../data/custom-image-gallery.css';
 export const images = [
   {
     id: 1,
-	 original: require('../images/DSC_0927.JPG'),
-    thumbnail: require('../images/DSC_0927.JPG'),
+	 original: require('../images/DSC_0890.JPG'),
+    thumbnail: require('../images/DSC_0890.JPG'),
   },
   {
     id: 2,
@@ -13,23 +13,23 @@ export const images = [
   },
   {
     id: 3,
+	 original: require('../images/DSC_0927.JPG'),
+    thumbnail: require('../images/DSC_0927.JPG'),
+  },
+  {
+    id: 4,
 	 original: require('../images/DSC_0799.JPG'),
     thumbnail: require('../images/DSC_0799.JPG'),
   },
   {
-	 id: 4,
+	 id: 5,
     original: require('../images/DSC_0899.JPG'),
     thumbnail: require('../images/DSC_0899.JPG'),
   },
   {
-    id: 5,
+    id: 6,
 	 original: require('../images/DSC_0907.JPG'),
     thumbnail: require('../images/DSC_0907.JPG'),
-  },
-  {
-    id: 6,
-	 original: require('../images/DSC_0890.JPG'),
-    thumbnail: require('../images/DSC_0890.JPG'),
   },
   {
     id: 7,

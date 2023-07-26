@@ -37,7 +37,7 @@ const Navbar = () => {
   return (
     <>
 	 <NavBarContainer>
-		<Nav>
+		<Nav isDrawerOpen={isDrawerOpen}> 
 			<NavLink to="/">
 				<Logo>
           		Raghav Parikh

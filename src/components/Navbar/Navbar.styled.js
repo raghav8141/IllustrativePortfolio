@@ -15,12 +15,15 @@ export const Nav = styled.nav`
   height: 70px;
   display: flex;    
   justify-content: space-between;
-  padding: 0.2rem calc((100vw - 1000px) / 2);
+//   padding: 0.2rem calc((100vw - 1000px) / 2);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 9999;
+//   z-index: 9999;
+  z-index: ${({ isDrawerOpen }) => (isDrawerOpen ? '1' : '9999')}; 
+  border-bottom: 1px solid;
+//   margin-bottom: ${({ isDrawerOpen }) => (isDrawerOpen ? '250px' : '0')};
 `;
 
 export const Logo = styled.div`
