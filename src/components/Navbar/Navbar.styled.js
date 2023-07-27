@@ -16,13 +16,13 @@ export const Nav = styled.nav`
   display: flex;    
   justify-content: space-between;
 //   padding: 0.2rem calc((100vw - 1000px) / 2);
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
-//   z-index: 9999;
-  z-index: ${({ isDrawerOpen }) => (isDrawerOpen ? '1' : '9999')}; 
-  border-bottom: 1px solid;
+  z-index: 9999;
+//   z-index: ${({ isDrawerOpen }) => (isDrawerOpen ? '1' : '9999')}; 
+//   border-bottom: 1px solid;
 //   margin-bottom: ${({ isDrawerOpen }) => (isDrawerOpen ? '250px' : '0')};
 `;
 
@@ -32,9 +32,9 @@ export const Logo = styled.div`
   align-items: center;
   color:  #000000;
   text-decoration: none;
-  font-size: 40px;
+  font-size: 35px;
   font-weight: 100;
-  position: absolute;
+  position: relative;
   top: 0.5%;
   left: 0;
   padding: 10px;
@@ -44,7 +44,7 @@ export const NavLink = styled(Link)`
   color:  #000000;
   display: flex;
   align-items: center;
-  text-decoration: underline;
+  text-decoration: none;
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
@@ -65,12 +65,12 @@ export const Name = styled.div`
 
 export const Bars = styled(FaBars)`
   display: flex;
-  position: absolute;
-  top: 45%;
+  position: relative;
+  top: 53%;
   right: 0;
   transform: translate(-100%, -50%);
   color:  #000000;
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   cursor: pointer;
 `;
 

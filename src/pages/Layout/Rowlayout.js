@@ -51,17 +51,14 @@ export default function Gallery() {
 
   const handlePhotoClick = (obj) => {
 	const photo = obj.photo;
-	console.log(photo);
     setClickedImageId(photo.id);
 	 navigate(`/gallery/image/${photo.id}`);
   };
 
   const renderClickedImage = () => {
-	console.log(clickedImageId);
     if (clickedImageId) {
 		const image = images.find((img) => img.id === clickedImageId);
 		if(image) {
-			console.log(image.original);
 			return (
 				<img
 					src={image.original}
