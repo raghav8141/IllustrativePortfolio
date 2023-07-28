@@ -23,6 +23,7 @@ const Contact = () => {
       return;
     }
     form.current.submit();
+	 form.current.reset();
   };
 
 	return(
