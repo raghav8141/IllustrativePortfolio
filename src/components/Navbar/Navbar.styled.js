@@ -21,7 +21,7 @@ export const Nav = styled.nav`
   left: 0;
   right: 0;
 //   z-index: 9999;
-  z-index: ${({ isDrawerOpen }) => (isDrawerOpen ? '1' : '9999')}; 
+  z-index: ${({ isDrawerOpen }) => (isDrawerOpen ? '1' : '989')}; 
 //   border-bottom: 1px solid;
 //   margin-bottom: ${({ isDrawerOpen }) => (isDrawerOpen ? '250px' : '0')};
 `;
