@@ -20,8 +20,8 @@ export const Nav = styled.nav`
   top: 0;
   left: 0;
   right: 0;
-  z-index: 9999;
-//   z-index: ${({ isDrawerOpen }) => (isDrawerOpen ? '1' : '9999')}; 
+//   z-index: 9999;
+  z-index: ${({ isDrawerOpen }) => (isDrawerOpen ? '1' : '9999')}; 
 //   border-bottom: 1px solid;
 //   margin-bottom: ${({ isDrawerOpen }) => (isDrawerOpen ? '250px' : '0')};
 `;
@@ -66,7 +66,7 @@ export const Name = styled.div`
 export const Bars = styled(FaBars)`
   display: flex;
   position: relative;
-  top: 53%;
+  top: 52%;
   right: 0;
   transform: translate(-100%, -50%);
   color:  #000000;
