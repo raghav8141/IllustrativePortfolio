@@ -27,7 +27,7 @@ export const BackgroundImg = styled.img`
   width: 100%;
   height: ${({ overlay }) => (overlay ? '100%' : 'calc(100% - 8%)')};
   object-fit: cover;
-  z-index: 50;
+//   z-index: 50;
 `;
 
 export const Name = styled.div`

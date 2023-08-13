@@ -7,7 +7,7 @@ export const NavBarContainer = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 9999;
+  z-index: 1;
 `;
 
 export const Nav = styled.nav`
@@ -15,15 +15,11 @@ export const Nav = styled.nav`
   height: 70px;
   display: flex;    
   justify-content: space-between;
-//   padding: 0.2rem calc((100vw - 1000px) / 2);
   position: relative;
   top: 0;
   left: 0;
   right: 0;
-//   z-index: 9999;
-  z-index: ${({ isDrawerOpen }) => (isDrawerOpen ? '1' : '989')}; 
-//   border-bottom: 1px solid;
-//   margin-bottom: ${({ isDrawerOpen }) => (isDrawerOpen ? '250px' : '0')};
+  z-index: ${({ isDrawerOpen }) => (isDrawerOpen ? '2' : '989')}; 
 `;
 
 export const Logo = styled.div`
