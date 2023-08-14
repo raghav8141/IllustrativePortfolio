@@ -12,7 +12,7 @@ export const NavBarContainer = styled.div`
 
 export const Nav = styled.nav`
   background: #fffff;
-  height: 70px;
+  min-height: 20px;
   display: flex;    
   justify-content: space-between;
   position: relative;
@@ -20,6 +20,24 @@ export const Nav = styled.nav`
   left: 0;
   right: 0;
   z-index: ${({ isDrawerOpen }) => (isDrawerOpen ? '2' : '989')}; 
+//   border-bottom: 0.5px solid;
+
+  padding-bottom: 0.5px; 
+  margin-bottom: -0.5px; 
+   &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0.5px;
+    background-color: #000000;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  
+//   z-index: ${({ isDrawerOpen }) => (isDrawerOpen ? '1' : '9999')}; 
+//   margin-bottom: ${({ isDrawerOpen }) => (isDrawerOpen ? '250px' : '0')};
+//   padding: 0.2rem calc((100vw - 1000px) / 2);
 `;
 
 export const Logo = styled.div`
@@ -64,7 +82,7 @@ export const Bars = styled(FaBars)`
   position: relative;
   top: 52%;
   right: 0;
-  transform: translate(-100%, -50%);
+  transform: translate(-100%, 80%);
   color:  #000000;
   font-size: 2.4rem;
   cursor: pointer;
