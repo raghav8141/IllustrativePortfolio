@@ -7,23 +7,37 @@ export const NavBarContainer = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 9999;
+  z-index: 1;
 `;
 
 export const Nav = styled.nav`
   background: #fffff;
-  height: 70px;
+  min-height: 20px;
   display: flex;    
   justify-content: space-between;
-//   padding: 0.2rem calc((100vw - 1000px) / 2);
   position: relative;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 9999;
+  z-index: ${({ isDrawerOpen }) => (isDrawerOpen ? '2' : '989')}; 
+//   border-bottom: 0.5px solid;
+
+  padding-bottom: 0.5px; 
+  margin-bottom: -0.5px; 
+   &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0.5px;
+    background-color: #000000;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  
 //   z-index: ${({ isDrawerOpen }) => (isDrawerOpen ? '1' : '9999')}; 
-//   border-bottom: 1px solid;
 //   margin-bottom: ${({ isDrawerOpen }) => (isDrawerOpen ? '250px' : '0')};
+//   padding: 0.2rem calc((100vw - 1000px) / 2);
 `;
 
 export const Logo = styled.div`
@@ -66,9 +80,9 @@ export const Name = styled.div`
 export const Bars = styled(FaBars)`
   display: flex;
   position: relative;
-  top: 53%;
+  top: 52%;
   right: 0;
-  transform: translate(-100%, -50%);
+  transform: translate(-100%, 80%);
   color:  #000000;
   font-size: 2.4rem;
   cursor: pointer;
