@@ -11,6 +11,7 @@ const GalleryContainer = styled.div`
   right: 7px;
   bottom: 0;
   overflow: auto; 
+  margin-top: 15px;
 `;
 
 const photos = [
