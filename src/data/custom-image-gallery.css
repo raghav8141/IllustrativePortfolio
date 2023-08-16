@@ -3,7 +3,7 @@
 	top: 9%;
 	left: 0;
 	right: 0;
-	bottom: 0;
+	/* bottom: 0; */
 }
 
 /* Center the main image horizontally and vertically */
@@ -16,12 +16,16 @@
 
 /* Make the main image take 90% of the screen width */
 .image-gallery-slide img {
-	max-width: 90%;
-	max-height: 90vh;
+	max-width: 80%;
+	max-height: 80vh;
 	/* Limit the height to 90% of the viewport height */
 	object-fit: contain;
 	/* box-shadow: none; */
 	/* Change to 'cover' if you prefer */
+}
+
+.image-gallery-content .image-gallery-slide .image-gallery-image {
+	max-height: calc(100vh - 210px);
 }
 
 /* Position the thumbnails at the bottom of the screen */
@@ -37,13 +41,18 @@
 /* Add some space between the thumbnails */
 .image-gallery-thumbnails {
 	margin-top: 8px;
+	
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 
 /* Adjust the size of the thumbnails */
 .image-gallery-thumbnail img {
-	width: 80px;
-	height: 60px;
+	width: 60px;
+	height: 45px;
 	object-fit: cover;
+	margin: 4px;
 }
 
 /* Increase the spacing between thumbnails */
@@ -54,15 +63,10 @@
 .image-gallery-fullscreen-button {
 	cursor: pointer;
 	position: absolute;
-	top: 500px;
-	right: 12px;
+	/* top: 80%; */
+	/* right: 12px; */
 	z-index: 2;
-}
-
-.image-gallery-fullscreen-button img {
-	/* content: url('../images/fullscreen-icon-maximize-icon-png-favpng-y7LxszXV7xEBa3uPihKvEszdt.jpg'); */
-	width: 24px;
-	height: 24px;
+	transform: translateY(-50%);
 }
 
 .image-gallery-fullscreen-button:hover img {
@@ -72,14 +76,10 @@
 .image-gallery-play-button {
 	cursor: pointer;
 	position: absolute;
-	top: 500px;
-	left: 12px;
+	/* top: 80%; */
+	/* left: 12px; */
 	z-index: 2;
-}
-
-.image-gallery-play-button img {
-	width: 24px;
-	height: 24px;
+	transform: translateY(-50%);
 }
 
 .image-gallery-play-button:hover img {
@@ -87,21 +87,7 @@
 }
 
 @media screen and (max-width: 768px) {
-
-	.image-gallery-fullscreen-button,
-	.image-gallery-play-button {
-		top: 50%;
-		/* Adjust vertical position for smaller screens */
-		transform: translateY(-50%);
-	}
-
-	.image-gallery-fullscreen-button {
-		right: 12px;
-		/* Keep the right position */
-	}
-
-	.image-gallery-play-button {
-		left: 12px;
-		/* Keep the left position */
+	.image-gallery-thumbnails-wrapper {
+		padding: 8px;
 	}
 }
