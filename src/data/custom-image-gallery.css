@@ -25,7 +25,7 @@
 }
 
 .image-gallery-content .image-gallery-slide .image-gallery-image {
-	max-height: calc(100vh - 210px);
+	/* max-height: calc(100vh - 210px); */
 }
 
 /* Position the thumbnails at the bottom of the screen */
