@@ -66,7 +66,7 @@
 	/* top: 80%; */
 	/* right: 12px; */
 	z-index: 2;
-	transform: translateY(-50%);
+	/* transform: translateY(-50%); */
 }
 
 .image-gallery-fullscreen-button:hover img {
@@ -79,7 +79,7 @@
 	/* top: 80%; */
 	/* left: 12px; */
 	z-index: 2;
-	transform: translateY(-50%);
+	/* transform: translateY(-50%); */
 }
 
 .image-gallery-play-button:hover img {
