@@ -11,6 +11,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin-top: 11px;
 }
 
 /* Make the main image take 90% of the screen width */
@@ -83,4 +84,24 @@
 
 .image-gallery-play-button:hover img {
 	opacity: 0.7;
+}
+
+@media screen and (max-width: 768px) {
+
+	.image-gallery-fullscreen-button,
+	.image-gallery-play-button {
+		top: 50%;
+		/* Adjust vertical position for smaller screens */
+		transform: translateY(-50%);
+	}
+
+	.image-gallery-fullscreen-button {
+		right: 12px;
+		/* Keep the right position */
+	}
+
+	.image-gallery-play-button {
+		left: 12px;
+		/* Keep the left position */
+	}
 }
