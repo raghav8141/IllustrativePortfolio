@@ -24,6 +24,10 @@
 	/* Change to 'cover' if you prefer */
 }
 
+.image-gallery-slides {
+	display:flex;
+}
+
 .image-gallery-content .image-gallery-slide .image-gallery-image {
 	max-height: calc(100vh - 210px);
 }
@@ -95,7 +99,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin-top: 0;
+		margin-top: 11;
 		/* Remove margin-top to center vertically */
 		height: 50;
 		/* Set height to 100vh to fill the screen */
