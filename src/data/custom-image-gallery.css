@@ -90,4 +90,20 @@
 	.image-gallery-thumbnails-wrapper {
 		padding: 8px;
 	}
+
+	.image-gallery-slide {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 0;
+		/* Remove margin-top to center vertically */
+		height: 50;
+		/* Set height to 100vh to fill the screen */
+	}
+
+	.image-gallery-slide img {
+		max-width: 80%;
+		/* Increase the width for better visibility */
+		max-height: 90vh;
+	}
 }

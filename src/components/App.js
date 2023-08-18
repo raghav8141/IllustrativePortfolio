@@ -6,7 +6,6 @@ import Contact from '../pages/Contact/Contact';
 import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-dom';
 import Rowlayout from '../pages/Layout/Rowlayout';
 import GlobalStyles from '../styles/GlobalStyle';
-// import CustomImageGallery from '../data/CustomImageGallery';
 
 function App() {
   return (
