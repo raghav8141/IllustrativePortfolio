@@ -1,4 +1,5 @@
 import ImageGallery from 'react-image-gallery';
+import React from 'react';
 import { images } from '../data/images';
 import Home from '../pages/Home/Home';
 import Navbar from './Navbar/Navbar';
@@ -42,8 +43,37 @@ function MyGallery(props) {
 		)
 		startIndex = index; 
 	}
+
+	 const [showThumbnails, setShowThumbnails] = React.useState(true);
+	  const toggleThumbnails = () => {
+    setShowThumbnails(!showThumbnails);
+  };
+
+  const renderFullscreenButton = (onClick, isFullscreen) => (
+   <button
+      type="button"
+      className={`image-gallery-icon image-gallery-fullscreen-button ${isFullscreen ? 'fullscreen' : ''}`}
+      onClick={() => {
+        toggleThumbnails();
+        onClick();
+      }}
+    >
+      <svg className="image-gallery-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+      strokeWidth="2" strokeLinecap='round' strokeLinejoin='round'>
+      {isFullscreen ? (
+        <path d='M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3'></path>
+      ) : (
+        <path d='M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3'></path>
+      )}
+    </svg>
+    </button>
+  );
+
 	return (
-		<ImageGallery items={images} startIndex={startIndex} />
-		// <CustomImageGallery startIndex={startIndex} />
-	)
+			<ImageGallery items={images} 
+				startIndex={startIndex} 
+				showThumbnails={showThumbnails}
+				renderFullscreenButton={renderFullscreenButton}
+			/>
+	);
 }
