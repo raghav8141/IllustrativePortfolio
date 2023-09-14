@@ -29,7 +29,7 @@
 }
 
 .image-gallery-content .image-gallery-slide .image-gallery-image {
-	max-height: calc(100vh - 210px);
+	max-height: calc(100vh - 250px);
 }
 
 /* Position the thumbnails at the bottom of the screen */
@@ -99,9 +99,9 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin-top: 11;
+		/* margin-top: 11; */
 		/* Remove margin-top to center vertically */
-		height: 50;
+		height: 50vh;
 		/* Set height to 100vh to fill the screen */
 	}
 
