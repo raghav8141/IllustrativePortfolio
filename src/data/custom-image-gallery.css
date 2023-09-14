@@ -95,26 +95,26 @@
 		padding: 8px;
 	}
 
-	.image-gallery-slide {
+	.image-gallery-slide 
+	.image-gallery-image 
+	{
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		/* margin-top: 11; */
-		/* Remove margin-top to center vertically */
 		height: 50vh;
-		/* Set height to 100vh to fill the screen */
+		max-width: 80%;
+		max-height: 210px;
 	}
 
-	.image-gallery-slide img {
+	/* .image-gallery-slide img {
 		max-width: 80%;
-		/* Increase the width for better visibility */
-		max-height: 90vh;
-	}
+		max-height: 210px;
+	} */
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-	.image-gallery-slide img {
+	.image-gallery-content .image-gallery-slide .image-gallery-image {
 		max-height: calc(100vh - 250px);
-		/* Adjust max-height for iPads */
 	}
 }
