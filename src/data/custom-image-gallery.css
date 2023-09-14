@@ -29,7 +29,7 @@
 }
 
 .image-gallery-content .image-gallery-slide .image-gallery-image {
-	max-height: calc(100vh - 250px);
+	max-height: calc(100vh - 230px);
 }
 
 /* Position the thumbnails at the bottom of the screen */
@@ -110,4 +110,10 @@
 		/* Increase the width for better visibility */
 		max-height: 90vh;
 	}
+
+		 @media screen and (min-width: 600px) and (max-width: 768px) {
+		 	.image-gallery-slide img {
+		 		max-height: calc(100vh - 250px);
+		 	}
+		 }
 }
