@@ -32,6 +32,10 @@
 	max-height: calc(100vh - 220px);
 }
 
+.image-gallery-content .image-gallery-slide.full-screen img {
+	max-height: calc(100vh - 100px);
+}
+
 /* Position the thumbnails at the bottom of the screen */
 .image-gallery-thumbnails-wrapper {
 	position: fixed;
@@ -95,6 +99,7 @@
 		padding: 8px;
 	}
 
+	.image-gallery-content
 	.image-gallery-slide 
 	.image-gallery-image 
 	{
@@ -121,7 +126,7 @@
 
 @media screen and (max-width: 768px) {
 	.image-gallery-content .image-gallery-slide.full-screen img {
-		max-height: calc(100vh - 80px);
+		max-height: none;
 	}
 }
 
