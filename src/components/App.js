@@ -60,27 +60,28 @@ function MyGallery(props) {
       // Toggle a class on the slide element when entering/exiting full-screen mode
       const slide = document.querySelector('.image-gallery-slide');
       if (slide) {
-        if (isFullscreen) {
+        if (!isFullscreen) {
           // Add the full-screen class when entering full-screen mode
           slide.classList.add('full-screen');
           // Remove any height restriction when in fullscreen mode on iPad screens
           slide.style.maxHeight = 'none';
-        } else {
-          // Remove the full-screen class when exiting full-screen mode
-          slide.classList.remove('full-screen');
-          // Reset the max height based on screen size when not in fullscreen mode
-          const image = slide.querySelector('img');
-          if (window.innerWidth <= 768) {
-            // Small screens (<= 768px)
-            image.style.maxHeight = '210px';
-          } else if (window.innerWidth > 768 && window.innerWidth <= 1024) {
-            // iPad screens (768px < screen width <= 1024px)
-            image.style.maxHeight = 'calc(100vh - 250px)';
-          } else {
-            // Large screens
-            image.style.maxHeight = 'calc(100vh - 220px)';
-          }
-        }
+        } 
+		//   else {
+      //     // Remove the full-screen class when exiting full-screen mode
+      //     slide.classList.remove('full-screen');
+      //     // Reset the max height based on screen size when not in fullscreen mode
+      //     const image = slide.querySelector('img');
+      //     if (window.innerWidth <= 768) {
+      //       // Small screens (<= 768px)
+      //       image.style.maxHeight = '210px';
+      //     } else if (window.innerWidth > 768 && window.innerWidth <= 1024) {
+      //       // iPad screens (768px < screen width <= 1024px)
+      //       image.style.maxHeight = 'calc(100vh - 250px)';
+      //     } else {
+      //       // Large screens
+      //       image.style.maxHeight = 'calc(100vh - 220px)';
+      //     }
+      //   }
       }
       }}
 
