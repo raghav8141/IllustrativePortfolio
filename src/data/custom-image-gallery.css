@@ -120,13 +120,13 @@
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
 	.image-gallery-content .image-gallery-slide .image-gallery-image {
-		max-height: calc(100vh - 60vh);
+		max-height: calc(100vh - 250px);
 	}
 }
 
 @media screen and (max-width: 768px) {
 	.image-gallery-content .image-gallery-slide.full-screen img {
-		max-height: calc(100vh - 150px);
+		max-height: calc(100vh - 60vh);
 	}
 }
 
