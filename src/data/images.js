@@ -178,6 +178,18 @@ export const images = [
     thumbnail: require('../images/DSC_1093.JPG'),
 	 loading: "lazy",
   },
+  {
+    id: 28,
+	 original: require('../images/IMG_3236.jpg'),
+    thumbnail: require('../images/IMG_3236.jpg'),
+	 loading: "lazy",
+  },
+  {
+    id: 29,
+	 original: require('../images/IMG_3320.jpg'),
+    thumbnail: require('../images/IMG_3320.jpg'),
+	 loading: "lazy",
+  },
   
 ];
 
