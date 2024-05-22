@@ -41,12 +41,17 @@ const photos = [
 	 { id: 24, src: require('../../images/IMG_2460.JPG'), width: 2000, height: 1620, loading: "lazy" },
 	 { id: 25, src: require('../../images/DSC_1045.JPG'), width: 1080, height: 810, loading: "lazy" },
 	 { id: 26, src: require('../../images/DSC_1033.JPG'), width: 1080, height: 1620, loading: "lazy" },
-	 { id: 27, src: require('../../images/DSC_1093.JPG'), width: 1070, height: 800, loading: "lazy" },
-	 { id: 28, src: require('../../images/IMG_3236.jpg'), width: 1070, height: 800, loading: "lazy" },
-	 { id: 29, src: require('../../images/IMG_3320.jpg'), width: 1070, height: 800, loading: "lazy" },
+	 { id: 27, src: require('../../images/IMG_5099.JPG'), width: 700, height: 1000, loading: "lazy" },
+	 { id: 28, src: require('../../images/DSC_1093.JPG'), width: 1070, height: 800, loading: "lazy" },
+	 { id: 29, src: require('../../images/IMG_3320.jpg'), width: 900, height: 800, loading: "lazy" },
+	 { id: 30, src: require('../../images/IMG_3236.jpg'), width: 1070, height: 800, loading: "lazy" },
+	 { id: 31, src: require('../../images/IMG_5227.JPG'), width: 700, height: 800, loading: "lazy" },
+	 { id: 32, src: require('../../images/IMG_5221.jpg'), width: 900, height: 1000, loading: "lazy" },
+	 { id: 33, src: require('../../images/IMG_5214.JPG'), width: 1070, height: 800, loading: "lazy" },
+	 { id: 34, src: require('../../images/IMG_5223.JPG'), width: 900, height: 1000, loading: "lazy" },
+	 { id: 35, src: require('../../images/IMG_5213.JPG'), width: 1070, height: 800, loading: "lazy" }
 
 ];
-
 export default function Gallery() {
   const navigate = useNavigate();
   const [clickedImageId, setClickedImageId] = useState(null);

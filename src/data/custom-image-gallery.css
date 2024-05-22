@@ -63,6 +63,12 @@
 	margin: 4px;
 }
 
+.image-gallery-thumbnail .image-gallery-thumbnail-image {
+	width: 90%;
+	line-height: 0;
+	vertical-align: middle;
+}
+
 /* Increase the spacing between thumbnails */
 .image-gallery-thumbnail:not(:last-child) {
 	margin-right: 8px;
