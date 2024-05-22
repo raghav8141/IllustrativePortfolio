@@ -171,23 +171,58 @@ export const images = [
     thumbnail: require('../images/DSC_1033.JPG'),
 	 loading: "lazy",
   },
-  
   {
     id: 27,
-	 original: require('../images/DSC_1093.JPG'),
-    thumbnail: require('../images/DSC_1093.JPG'),
+	 original: require('../images/IMG_5099.JPG'),
+    thumbnail: require('../images/IMG_5099.JPG'),
 	 loading: "lazy",
   },
   {
     id: 28,
-	 original: require('../images/IMG_3236.jpg'),
-    thumbnail: require('../images/IMG_3236.jpg'),
+	 original: require('../images/DSC_1093.JPG'),
+    thumbnail: require('../images/DSC_1093.JPG'),
 	 loading: "lazy",
   },
   {
     id: 29,
 	 original: require('../images/IMG_3320.jpg'),
     thumbnail: require('../images/IMG_3320.jpg'),
+	 loading: "lazy",
+  },
+  {
+    id: 30,
+	 original: require('../images/IMG_3236.jpg'),
+    thumbnail: require('../images/IMG_3236.jpg'),
+	 loading: "lazy",
+  },
+  {
+    id: 31,
+	 original: require('../images/IMG_5227.JPG'),
+    thumbnail: require('../images/IMG_5227.JPG'),
+	 loading: "lazy",
+  },
+   {
+    id: 32,
+	 original: require('../images/IMG_5221.jpg'),
+    thumbnail: require('../images/IMG_5221.jpg'),
+	 loading: "lazy",
+  },
+  {
+    id: 33,
+	 original: require('../images/IMG_5214.JPG'),
+    thumbnail: require('../images/IMG_5214.JPG'),
+	 loading: "lazy",
+  },
+  {
+    id: 34,
+	 original: require('../images/IMG_5223.JPG'),
+    thumbnail: require('../images/IMG_5223.JPG'),
+	 loading: "lazy",
+  },
+  {
+    id: 35,
+	 original: require('../images/IMG_5213.JPG'),
+    thumbnail: require('../images/IMG_5213.JPG'),
 	 loading: "lazy",
   },
   
