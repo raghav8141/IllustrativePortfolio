@@ -225,6 +225,18 @@ export const images = [
     thumbnail: require('../images/IMG_5213.JPG'),
 	 loading: "lazy",
   },
+  {
+    id: 36,
+	 original: require('../images/IMG_6641.jpeg'),
+    thumbnail: require('../images/IMG_6641.jpeg'),
+	 loading: "lazy",
+  },
+  {
+    id: 37,
+	 original: require('../images/IMG_6650.jpeg'),
+    thumbnail: require('../images/IMG_6650.jpeg'),
+	 loading: "lazy",
+  }
   
 ];
 
