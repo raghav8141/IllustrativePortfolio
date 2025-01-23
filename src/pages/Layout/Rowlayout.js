@@ -52,41 +52,6 @@ const photos = [
 	 { id: 3, src: require('../../images/DSC_0927.JPG'), width: 1080, height: 600, loading: "lazy" },
 	 { id: 2, src: require('../../images/DSC_0932.JPG'), width: 1080, height: 720, loading: "lazy" },
     { id: 1, src: require('../../images/DSC_0890.JPG'), width: 800, height: 1000, loading: "lazy" }
-   
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-    
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	
-	 
-	 
-	 
-	 
 
 ];
 export default function Gallery() {
