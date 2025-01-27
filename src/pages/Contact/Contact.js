@@ -4,10 +4,13 @@ import emailjs from '@emailjs/browser';
 import InstagramLogo from '../../images/3621435.png';
 import LinkedinLogo from '../../images/linkedin-logo-linkedin-icon-transparent-free-png.webp'
 import GmailLogo from '../../images/Gmail_icon_(2020).svg.png';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './style.css';
 
 const Contact = () => {
   const form = useRef();
+  
   const [showCopyMessage, setShowCopyMessage] = useState(false);
 
   const copyToClipboard = (email) => {
@@ -31,6 +34,7 @@ const Contact = () => {
       alert('Please enter a valid email address');
       return;
     }
+	
     emailjs
       .sendForm(
         'service_oc3z8zb', // Replace with your service ID
@@ -40,11 +44,37 @@ const Contact = () => {
       )
       .then(
         (result) => {
-          alert('Message sent successfully!');
+          toast.success('Message sent successfully!', {
+            position: "top-right",  
+            autoClose: 5000,        
+            hideProgressBar: false, 
+            closeOnClick: true,     
+            pauseOnHover: true,     
+            draggable: true,        
+            progress: undefined,    
+            style: {                
+              fontSize: '18px',     
+              padding: '15px',      
+              borderRadius: '8px',  
+            },
+          });
           form.current.reset();
         },
         (error) => {
-          alert('Failed to send message, please try again later.');
+          toast.error('Failed to send message, please try again later.', {
+            position: "top-right",  
+            autoClose: 5000,        
+            hideProgressBar: false, 
+            closeOnClick: true,     
+            pauseOnHover: true,     
+            draggable: true,        
+            progress: undefined,    
+            style: {                
+              fontSize: '18px',     
+              padding: '15px',      
+              borderRadius: '8px',  
+            },
+          });
           console.error(error);
         }
       );
@@ -94,6 +124,7 @@ const Contact = () => {
 		</div>
   	</div>
 </div>
+ <ToastContainer /> 
 </StyledContactForm>
 );
 };
