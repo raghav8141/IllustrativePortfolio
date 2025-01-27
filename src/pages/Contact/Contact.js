@@ -1,5 +1,6 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import StyledContactForm from './Contact.styled';
+import emailjs from '@emailjs/browser';
 import InstagramLogo from '../../images/3621435.png';
 import LinkedinLogo from '../../images/linkedin-logo-linkedin-icon-transparent-free-png.webp'
 import GmailLogo from '../../images/Gmail_icon_(2020).svg.png';
@@ -7,6 +8,14 @@ import './style.css';
 
 const Contact = () => {
   const form = useRef();
+  const [showCopyMessage, setShowCopyMessage] = useState(false);
+
+  const copyToClipboard = (email) => {
+    navigator.clipboard.writeText(email).then(() => {
+		setShowCopyMessage(true);
+      setTimeout(() => setShowCopyMessage(false), 2000);
+    });
+  };
 
   const validateEmail = (email) => {
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -22,8 +31,23 @@ const Contact = () => {
       alert('Please enter a valid email address');
       return;
     }
-    form.current.submit();
-	 form.current.reset();
+    emailjs
+      .sendForm(
+        'service_oc3z8zb', // Replace with your service ID
+        'template_paw9z5v', // Replace with your template ID
+        form.current,
+        'fdrhuy-BxqiNIeH8Y'   // Replace with your public key
+      )
+      .then(
+        (result) => {
+          alert('Message sent successfully!');
+          form.current.reset();
+        },
+        (error) => {
+          alert('Failed to send message, please try again later.');
+          console.error(error);
+        }
+      );
   };
 
 	return(
@@ -34,7 +58,7 @@ const Contact = () => {
 		<div className='form-box'>
 				<div className="row">
 					<div className="column">
-						<form ref={form} onSubmit={handleSubmit} action="mailto:Raghavparikh1997@gmail.com" method="post" encType="text/plain">
+						<form ref={form} onSubmit={handleSubmit}>
 							<h2>Contact Me</h2>
 							<label className='required'>Name</label>
 							<input type="text" name="Name" required/>
@@ -53,9 +77,17 @@ const Contact = () => {
 							<a href="https://www.linkedin.com/in/raghav-parikh-392233172">
 								<img className="image2" src={LinkedinLogo} alt="LinkedIn" />
 							</a>
-							<a href="mailto:Raghavparikh1997@gmail.com">
-								<img className="image3" src={GmailLogo} alt="Gmail" />
-							</a>
+							<div style={{ position: 'relative', display: 'inline-block' }}>
+								<button
+									onClick={() => copyToClipboard('Raghavparikh1997@gmail.com')}
+									className="email-logo-button"
+								>
+									<img className="image3" src={GmailLogo} alt="Gmail" />
+								</button>
+								{showCopyMessage && (
+									<div className="copy-message">Email copied</div>
+								)}
+							</div>
 						</div>
 					</div>
 			</div>
