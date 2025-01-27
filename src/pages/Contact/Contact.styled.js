@@ -47,6 +47,46 @@ const StyledContactForm = styled.div`
 		gap: 10px;
    }
 
+	.email-logo-button {
+		background: none;
+		border: none;
+		padding: 0;
+		cursor: pointer;
+	}
+
+	.email-logo-button img {
+		width: 65%;
+		height: auto;
+	}
+
+	.copy-message {
+		position: absolute;
+		top: -30px; /* Adjust to position the box above the logo */
+		left: 50%;
+		transform: translateX(-50%);
+		background-color: #333;
+		color: white;
+		padding: 5px 10px;
+		border-radius: 5px;
+		font-size: 12px;
+		box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+		white-space: nowrap;
+		z-index: 10;
+  		animation: fadeOut 2s ease forwards;
+	}
+
+	@keyframes fadeOut {
+		0% {
+			opacity: 1;
+		}
+		80% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+
  .form-box {
     border: 1px solid black;
     padding: 10px;
