@@ -15,6 +15,9 @@ const GalleryContainer = styled.div`
 `;
 
 const photos = [
+	 { id: 40, src: require('../../images/IMG_7520.JPG'), width: 1080, height: 1000, loading: "lazy" },
+	 { id: 39, src: require('../../images/IMG_7433.JPG'), width: 900, height: 1000, loading: "lazy" },
+	 { id: 38, src: require('../../images/IMG_7519.jpg'), width: 900, height: 1000, loading: "lazy" },
 	 { id: 37, src: require('../../images/IMG_6650.jpeg'), width: 900, height: 1000, loading: "lazy" },
 	 { id: 36, src: require('../../images/IMG_6641.jpeg'), width: 1070, height: 800, loading: "lazy" },
 	 { id: 35, src: require('../../images/IMG_5213.JPG'), width: 1070, height: 800, loading: "lazy" },

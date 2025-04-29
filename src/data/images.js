@@ -1,7 +1,25 @@
 import '../data/custom-image-gallery.css';
 
 export const images = [
-	 {
+	{
+    id: 40,
+	 original: require('../images/IMG_7520.JPG'),
+    thumbnail: require('../images/IMG_7520.JPG'),
+	 loading: "lazy",
+   },
+	{
+    id: 39,
+	 original: require('../images/IMG_7433.JPG'),
+    thumbnail: require('../images/IMG_7433.JPG'),
+	 loading: "lazy",
+  },
+  {
+    id: 38,
+	 original: require('../images/IMG_7519.jpg'),
+    thumbnail: require('../images/IMG_7519.jpg'),
+	 loading: "lazy",
+  },
+  {
     id: 37,
 	 original: require('../images/IMG_6650.jpeg'),
     thumbnail: require('../images/IMG_6650.jpeg'),
