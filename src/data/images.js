@@ -6,7 +6,7 @@ export const images = [
 	 original: require('../images/IMG_7520.JPG'),
     thumbnail: require('../images/IMG_7520.JPG'),
 	 loading: "lazy",
-  },
+   },
 	{
     id: 39,
 	 original: require('../images/IMG_7433.JPG'),
