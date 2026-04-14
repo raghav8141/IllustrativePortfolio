@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
-import './custom-image-gallery.css'; // Imported custom CSS file
-import {images} from './images';     
-// import '../data/custom-image-gallery.css'; // Imported custom CSS file
-// import {images} from '../data/images';
+import './custom-image-gallery.css'; 
+import {images} from '../../data/images';     
+
 
 const CustomImageGallery = () => {
   const [showThumbnails, setShowThumbnails] = useState(true);

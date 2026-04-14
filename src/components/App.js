@@ -1,12 +1,14 @@
 import ImageGallery from 'react-image-gallery';
 import React from 'react';
-import { images } from '../data/images';
+import { allPhotos } from '../data/photos';
 import Home from '../pages/Home/Home';
 import Navbar from './Navbar/Navbar';
 import Contact from '../pages/Contact/Contact';
 import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-dom';
 import Rowlayout from '../pages/Layout/Rowlayout';
 import GlobalStyles from '../styles/GlobalStyle';
+import styled from 'styled-components';
+
 
 function App() {
   return (
@@ -31,13 +33,120 @@ function App() {
 
 export default App;
 
+const SliderWrapper = styled.div`
+  position: fixed;
+  top: 80px;      
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  overflow: hidden;
+
+  .image-gallery {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .image-gallery-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center; 
+    gap: 30px; 
+  }
+
+  .image-gallery-slide-wrapper {
+    flex: 1; 
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .image-gallery-thumbnails-wrapper {
+    margin-top: 0; 
+	 padding-top:0;
+    padding-bottom: 10px; /* Adds space at the very bottom of the screen */
+
+    height: 145px;      /* Matches your 110px image + some padding/border */
+    flex-shrink: 0;     /* Prevents flexbox from squishing the belt */
+    overflow: hidden;   /* Keeps internal layout shifts contained */
+  }
+
+	/* --- NEW: ENABLE NATIVE SWIPE/SCROLL --- */
+  .image-gallery-thumbnails {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    padding-bottom: 5px;
+    -webkit-overflow-scrolling: touch; /* Native feel for Mac trackpads */
+    
+    /* Sleek Scrollbar Styling */
+    &::-webkit-scrollbar {
+      height: 4px; /* Very thin line */
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #e0e0e0; /* Subtle light grey */
+      border-radius: 10px;
+    }
+    &:hover::-webkit-scrollbar-thumb {
+      background: #ccc; /* Darkens slightly on hover */
+    }
+  }
+
+  .image-gallery-thumbnails-container {
+    display: inline-block !important; /* Required for horizontal scroll */
+    white-space: nowrap !important;
+  }
+
+  &&& .image-gallery-thumbnail {
+    width: auto !important; /* Allow the container to be flexible */
+	 background: transparent !important;
+	 border: 3px solid transparent !important;
+	 margin: 4px !important;
+    padding: 0 !important;
+    transition: all 0.2s ease;
+	 display: inline-block;
+    img {
+      width: 150px !important;  /* Increased width */
+      height: 110px !important;  /* Increased height */
+      object-fit: cover !important;
+    }
+ 
+    &.active {
+      border: 5px solid #337ab7 !important;
+    }
+
+	 &:hover {
+      cursor: pointer;
+      /* Option: Instead of a border, use opacity to show focus */
+      opacity: 0.8; 
+      
+      /* If you hate the blue hover box, leave the border transparent here */
+      // border: 3px solid transparent !important; 
+    }
+  }
+
+  &&& .image-gallery-thumbnail-image {
+    border: none !important;
+    outline: none !important;
+  }
+
+  /* Ensure the main image shrinks so the bigger thumbnails fit on screen */
+  .image-gallery-slide img {
+    max-height: calc(100vh - 320px) !important; 
+  }
+`;
+
 function MyGallery(props) {
 	const params = useParams();
 	const imageId = Number(params.id);
 
 	let startIndex = 0;
 	if(imageId) {
-		const index = images.findIndex((obj)=> {
+		const index = allPhotos.findIndex((obj)=> {
 				return obj.id == imageId;
 			}
 		)
@@ -99,10 +208,13 @@ function MyGallery(props) {
   );
 
 	return (
-			<ImageGallery items={images} 
-				startIndex={startIndex} 
-				showThumbnails={showThumbnails}
-				renderFullscreenButton={renderFullscreenButton}
-			/>
-	);
+    <SliderWrapper>
+      <ImageGallery 
+        items={allPhotos} 
+        startIndex={startIndex} 
+        showThumbnails={showThumbnails}
+        renderFullscreenButton={renderFullscreenButton}
+      />
+     </SliderWrapper>
+  );
 }

@@ -4,6 +4,7 @@
 	left: 0;
 	right: 0;
 	/* bottom: 0; */
+	margin-bottom: 30px !important;
 }
 
 /* Center the main image horizontally and vertically */
@@ -16,12 +17,7 @@
 
 /* Make the main image take 90% of the screen width */
 .image-gallery-slide img {
-	max-width: 80%;
-	max-height: 80vh;
-	/* Limit the height to 90% of the viewport height */
-	object-fit: contain;
-	/* box-shadow: none; */
-	/* Change to 'cover' if you prefer */
+	max-height: calc(100vh - 260px) !important;
 }
 
 .image-gallery-slides {
@@ -38,12 +34,9 @@
 
 /* Position the thumbnails at the bottom of the screen */
 .image-gallery-thumbnails-wrapper {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	padding: 16px;
-	background-color: rgba(211, 211, 211);
+	padding-top: 10px !important;
+	padding-bottom: 10px !important;
+	background: white;
 }
 
 /* Add some space between the thumbnails */
@@ -56,17 +49,21 @@
 }
 
 /* Adjust the size of the thumbnails */
-.image-gallery-thumbnail img {
+&& .image-gallery-thumbnail {
 	width: 60px;
-	height: 45px;
+	height: 55px;
 	object-fit: cover;
 	margin: 4px;
 }
 
-.image-gallery-thumbnail .image-gallery-thumbnail-image {
-	width: 90%;
+&& .image-gallery-thumbnail .image-gallery-thumbnail-image {
+	/* width: 90%; */
 	line-height: 0;
 	vertical-align: middle;
+	width: 60px;
+	height: 55px;
+	object-fit: cover;
+	margin: 4px;
 }
 
 /* Increase the spacing between thumbnails */
